@@ -13,7 +13,7 @@ const requestLogger = require('./lib/request_logger')
 
 // require database configuration logic
 // `db` will be the actual Mongo URI as a string
-const db = require('./config/db')
+// const db = require('./config/db')
 
 // require configured passport authentication middleware
 const auth = require('./lib/auth')
@@ -26,11 +26,11 @@ const clientDevPort = 7165
 // establish database connection
 // use new version of URL parser
 // use createIndex instead of deprecated ensureIndex
-mongoose.connect(db, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
-})
+// mongoose.connect(db, {
+//   useNewUrlParser: true,
+//   useCreateIndex: true,
+//   useUnifiedTopology: true
+// })
 
 // instantiate express application object
 const app = express()
@@ -66,7 +66,7 @@ app.use(errorHandler)
 
 // run API on designated port (4741 in this case)
 app.listen(port, () => {
-  console.log('listening on port ' + port)
+  console.log('Welcome to api-ttt, app listening on port ' + port)
 })
 
 // needed for testing
